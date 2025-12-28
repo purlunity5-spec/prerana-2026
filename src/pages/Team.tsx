@@ -86,7 +86,7 @@ const domainTeams = [
   {
     name: "Legal & Documentation",
     roles: [
-      { title: "Head", members: [{ name: "Sophiya Sharma" }] },
+      { title: "Head", members: [{ name: "Sophiya Sharma", image: "/images/team/sophiya-sharma.jpg" }] },
       { title: "Lead", members: [{ name: "Hrishita Rauniyar" }] },
       { title: "Co-Lead", members: [{ name: "Unnati Chari" }] },
     ]
