@@ -31,7 +31,7 @@ export default function Register() {
                       <CardTitle className="text-3xl">General Fest Pass</CardTitle>
                       <CardDescription className="text-lg mt-1">Access to main events, pro-shows, and common areas.</CardDescription>
                     </div>
-                    <div className="text-3xl font-bold text-primary whitespace-nowrap">₹ 399</div>
+                    <div className="text-3xl font-bold text-primary whitespace-nowrap">₹ 299</div>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col gap-4">
