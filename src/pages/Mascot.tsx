@@ -17,6 +17,9 @@ export default function Mascot() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-primary">
               Meet The Mascot
             </h1>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-primary">
+              GIT-BUZZ
+            </h2>
             <p className="text-xl text-muted-foreground">
               The spirit of Prerana 2026
             </p>
