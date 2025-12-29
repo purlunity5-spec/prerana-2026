@@ -115,9 +115,9 @@ export default function EventCategories() {
                               <Button size="sm" onClick={(e) => {
                                 e.stopPropagation();
                                 const formMap: Record<string, string> = {
-                                  technical: 'https://forms.gle/YpQCfXMVQ4kasDtB6',
+                                  technical: 'https://forms.gle/KYqstmztD7UazrBu6',
                                   wellness: 'https://forms.gle/sqGzHvJY8Y8hPuDK6',
-                                  cultural: 'https://forms.gle/KYqstmztD7UazrBu6'
+                                  cultural: 'https://forms.gle/YpQCfXMVQ4kasDtB6'
                                 };
                                 const formUrl = formMap[cat.slug];
                                 if (formUrl) {

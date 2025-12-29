@@ -21,7 +21,7 @@ export default function CulturalRegistration() {
               <p className="text-muted-foreground mb-4">The registration form is hosted externally. Click the button below to open it in a new tab.</p>
               <div className="flex justify-center">
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLS_cultural_placeholder/viewform"
+                  href="https://forms.gle/YpQCfXMVQ4kasDtB6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-2 rounded-md bg-primary text-primary-foreground font-semibold hover:opacity-90 transition"

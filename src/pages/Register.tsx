@@ -73,7 +73,7 @@ export default function Register() {
               <CardFooter>
                 <Button 
                   className="w-full gap-2" 
-                  onClick={() => navigate("/register/technical")}
+                  onClick={() => window.open('https://forms.gle/KYqstmztD7UazrBu6', '_blank', 'noopener')}
                 >
                   Register Now <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -97,7 +97,7 @@ export default function Register() {
               <CardFooter>
                 <Button 
                   className="w-full gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground" 
-                  onClick={() => navigate("/register/cultural")}
+                  onClick={() => window.open('https://forms.gle/YpQCfXMVQ4kasDtB6', '_blank', 'noopener')}
                 >
                   Register Now <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -121,7 +121,7 @@ export default function Register() {
               <CardFooter>
                 <Button 
                   className="w-full gap-2 bg-accent hover:bg-accent/90 text-accent-foreground" 
-                  onClick={() => navigate("/register/wellness")}
+                  onClick={() => window.open('https://forms.gle/sqGzHvJY8Y8hPuDK6', '_blank', 'noopener')}
                 >
                   Register Now <ArrowRight className="w-4 h-4" />
                 </Button>
