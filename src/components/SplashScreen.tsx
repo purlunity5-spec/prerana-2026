@@ -32,11 +32,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/20 to-accent/20 blur-3xl rounded-full animate-pulse" />
         
-        <p className="text-xs md:text-sm text-muted-foreground mb-6 relative z-10 font-medium tracking-widest uppercase max-w-lg">
-        <span className="block">The Directorate of Student Life</span>
-        <span className="block">GITAM Deemed to be University</span>
-        <span className="block mt-1 text-[10px] md:text-xs opacity-80">Presents</span>
-        </p>
+        {/* Intro text removed as requested */}
 
         <img
           src="https://harmless-tapir-303.convex.cloud/api/storage/4a061a6e-11ab-491e-b5a2-78a2aa928f5d"

@@ -135,4 +135,12 @@
   .font-mono {
     font-family: Menlo, "Courier New", monospace;
   }
+  /* Utility to hide native scrollbars while keeping scrolling functional */
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 }

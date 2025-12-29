@@ -26,6 +26,7 @@ import Team from "./pages/Team.tsx";
 import Contact from "./pages/Contact.tsx";
 import AdminBrochure from "./pages/AdminBrochure.tsx";
 import About from "./pages/About.tsx";
+import SchedulePage from "./pages/Schedule";
 import Mascot from "./pages/Mascot.tsx";
 import TechnicalRegistration from "./pages/register/Technical.tsx";
 import CulturalRegistration from "./pages/register/Cultural.tsx";
@@ -91,6 +92,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/events" element={<Events />} />
               <Route path="/events/:category" element={<Events />} />
               <Route path="/events/:category/:slug" element={<Events />} />
+              <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/sponsors/partner-with-us" element={<Sponsors />} />

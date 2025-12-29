@@ -72,7 +72,7 @@ export default function NotFound() {
               size="lg" 
               variant="outline" 
               className="gap-2 h-14 text-lg border-accent/20 hover:bg-accent/10"
-              onClick={() => navigate("/#schedule")}
+              onClick={() => navigate("/schedule")}
             >
               <Calendar className="w-5 h-5" /> View the Schedule
             </Button>

@@ -59,9 +59,16 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold mb-1">Visit Us</h3>
                     <p className="text-muted-foreground">
-                      GITAM Deemed to be University, Bengaluru Campus<br />
-                      NH 207, Nagadenehalli, Doddaballapur Taluk<br />
-                      Bengaluru Rural District, Karnataka - 561203
+                      <a
+                        href="https://www.google.com/maps/place/GITAM+Deemed+to+be+University+Bengaluru/@13.2866427,77.5930016,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae3df04c9efe91:0x74ef0f7e2f81d564!8m2!3d13.2866427!4d77.5955765!16s%2Fg%2F1hjgjmxwt?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        GITAM Deemed to be University, Bengaluru Campus<br />
+                        NH 207, Nagadenehalli, Doddaballapur Taluk<br />
+                        Bengaluru Rural District, Karnataka - 561203
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -82,61 +89,7 @@ export default function Contact() {
             {/* Contact Info Column */}
             <div className="space-y-6">
               {/* General & Location */}
-              <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Contact Details</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0">
-                      <Mail className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">General Contact</h3>
-                      <p className="text-muted-foreground">preranablr@gitam.in</p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        (All queries—registration, events, media, sponsorship—are routed centrally.)
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0">
-                      <ShieldAlert className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">Campus Security Helpline</h3>
-                      <p className="text-muted-foreground font-mono">+91 89711 99915</p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        (For safety, emergency issues, or immediate on-campus assistance.)
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0">
-                      <MapPin className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">Campus Location</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        Directorate of Student Life<br />
-                        GITAM University – Bengaluru Campus<br />
-                        Nagadenahalli, Doddaballapur Taluk<br />
-                        Bengaluru Rural District, Karnataka – 562163, India
-                      </p>
-                      <a 
-                        href="https://maps.app.goo.gl/iSe3W3YDSogftvYX7" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-block mt-2 text-primary hover:underline text-sm font-medium"
-                      >
-                        View on Google Maps →
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              {/* Contact Details block removed as requested */}
 
               {/* Specific Contacts */}
               <Card className="bg-card/50 backdrop-blur-sm border-primary/20">

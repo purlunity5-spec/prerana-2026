@@ -34,7 +34,7 @@ export default function EventDetails({ event: selectedEvent, category }: EventDe
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-6">
-        <Button variant="ghost" onClick={() => navigate(`/events/${category}`)} className="gap-2 pl-0 hover:pl-2 transition-all">
+          <Button variant="ghost" onClick={() => navigate(`/events?open=${category}`)} className="gap-2 pl-0 hover:pl-2 transition-all">
           <ArrowLeft className="w-4 h-4" /> Back to {category} Events
         </Button>
       </div>

@@ -4,7 +4,6 @@ import Footer from "@/components/landing/Footer";
 import Gallery from "@/components/landing/Gallery";
 import Hero from "@/components/landing/Hero";
 import Navbar from "@/components/landing/Navbar";
-import Schedule from "@/components/landing/Schedule";
 import SplashScreen from "@/components/SplashScreen";
 import { useState } from "react";
 
@@ -19,8 +18,8 @@ export default function Landing() {
       <main>
         <Hero />
         <About />
-        <Schedule />
         <Gallery />
+        
         <CtaBar />
       </main>
       <Footer />

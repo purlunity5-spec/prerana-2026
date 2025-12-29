@@ -31,7 +31,7 @@ export default function Navbar() {
       href: "#",
       dropdown: [
         { name: "FAQ", href: "/faq" },
-        { name: "Schedule", href: "/#schedule" },
+        { name: "Schedule", href: "/schedule" },
         { name: "Security", href: "/security-guidelines" },
       ],
     },

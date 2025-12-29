@@ -28,18 +28,18 @@ const domainTeams = [
     ]
   },
   {
-    name: "Design & Media",
+    name: "Design & Content",
     roles: [
       { title: "Head", members: [{ name: "Venkata Vishnu Vardhan Raju", image: "https://harmless-tapir-303.convex.cloud/api/storage/b0b811e7-fc09-42c7-ad63-689fe542a0c8" }] },
       { title: "Lead", members: [{ name: "M. Dhanunjay Reddy", image: "https://harmless-tapir-303.convex.cloud/api/storage/c6d2c2ac-a887-4e9a-9b74-8bf3ea04815a" }] },
-      { title: "Co-Lead", members: [{ name: "Sohitha", image: "https://harmless-tapir-303.convex.cloud/api/storage/abab97c5-fe9c-4ab6-89d6-62aec61afd47" }] },
+      { title: "Co-Lead", members: [{ name: "Sohitha", image: "https://harmless-tapir-303.convex.cloud/api/storage/abab97c5-fe9c-4ab6-89d6-62aec61afd47" }, {name: "Guru Sai"}] },
     ]
   },
   {
     name: "Technology",
     roles: [
       { title: "Head", members: [{ name: "D. Naga Chandra Teja", image: "https://harmless-tapir-303.convex.cloud/api/storage/5cb4b06e-79e3-4d71-91bc-74d3d813aba0" }] },
-      { title: "Lead", members: [{ name: "Vasavi" }] },
+      { title: "Lead", members: [{ name: "Vasavi Gorantala" }] },
       { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim", image: "https://harmless-tapir-303.convex.cloud/api/storage/f19f04f8-fb37-4e1e-832d-0dc71ee218ee" }, { name: "Kandala Pavan", image: "https://harmless-tapir-303.convex.cloud/api/storage/86238237-813d-4505-b497-f65bcfbcf66d" }] },
     ]
   },
@@ -79,7 +79,7 @@ const domainTeams = [
     name: "Hospitality",
     roles: [
       { title: "Head", members: [{ name: "A. Jagadeesh", image: "/images/team/a-jagadeesh.jpg" }, { name: "Prakruthi V", image: "/images/team/prakruthi-v.jpg" }] },
-      { title: "Lead", members: [{ name: "Prithwi Ganesh Goud" }] },
+      { title: "Lead", members: [{ name: "Prithvi Ganesh Goud" }] },
       { title: "Co-Lead", members: [{ name: "Sri Nandini T", image: "/images/team/sri-nandini-t.jpg" }, { name: "Vakul Kumar Bayya", image: "/images/team/vakul-kumar-bayya.jpg" }] },
     ]
   },
@@ -102,7 +102,7 @@ const advisoryCommittee = [
   { name: "Meghana Musku", role: "Senior Executive (Wellness)" },
   { name: "Srikanth Basavraj", role: "Senior Executive" },
   { name: "Rayanka Debnath", role: "Senior Executive" },
-  { name: "Ayush BM", role: "Senior Executive" },
+  { name: "Ayush BM", role: "Executive - Visual Content" },
 ];
 
 function getInitials(name: string) {
@@ -134,31 +134,27 @@ export default function Team() {
             </p>
           </div>
 
-          {/* Leadership Section */}
-          <section className="space-y-12">
+          {/* Director (Reema) then Manager (Asha) then Advisory Committee */}
+          <section className="space-y-8">
             <div className="text-center space-y-4">
-               <h2 className="text-3xl font-bold text-secondary">Leadership</h2>
-               <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
+              <h2 className="text-3xl font-bold text-secondary">Advisory Leads</h2>
+              <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4">
-              {leadership.map((member, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="h-full"
-                >
-                  <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col justify-center items-center py-12 px-4 w-full">
+
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-4">
+              {/* Reema Mam */}
+              {advisoryCommittee.filter(m => m.name.toLowerCase().includes("reema")).map((member, i) => (
+                <motion.div key={`reema-${i}`} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }} className="w-full md:w-1/2">
+                  <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 h-full flex flex-col justify-center items-center py-10 px-6">
                     <CardHeader className="text-center p-0 space-y-4 w-full flex flex-col items-center">
-                      <Avatar className="w-32 h-32 border-4 border-primary/10 shadow-xl shadow-primary/5">
-                        <AvatarImage src={member.image} alt={member.name} className="object-cover object-top" />
+                      <Avatar className="w-36 h-36 border-4 border-primary/10 shadow-xl shadow-primary/5">
+                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover object-top" />
                         <AvatarFallback className="bg-primary/5 text-primary text-3xl font-bold">
                           {getInitials(member.name)}
                         </AvatarFallback>
                       </Avatar>
                       <div className="space-y-2">
-                        <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
+                        <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight">
                           {member.name}
                         </CardTitle>
                         <p className="text-lg md:text-xl text-primary font-medium tracking-wide uppercase">
@@ -169,6 +165,65 @@ export default function Team() {
                   </Card>
                 </motion.div>
               ))}
+
+              {/* Asha Mam */}
+              {advisoryCommittee.filter(m => m.name.toLowerCase().includes("asha")).map((member, i) => (
+                <motion.div key={`asha-${i}`} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }} className="w-full md:w-1/2">
+                  <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 h-full flex flex-col justify-center items-center py-10 px-6">
+                    <CardHeader className="text-center p-0 space-y-4 w-full flex flex-col items-center">
+                      <Avatar className="w-36 h-36 border-4 border-primary/10 shadow-xl shadow-primary/5">
+                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover object-top" />
+                        <AvatarFallback className="bg-primary/5 text-primary text-3xl font-bold">
+                          {getInitials(member.name)}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="space-y-2">
+                        <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight">
+                          {member.name}
+                        </CardTitle>
+                        <p className="text-lg md:text-xl text-primary font-medium tracking-wide uppercase">
+                          {member.role}
+                        </p>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Advisory Committee Placeholder + Members */}
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="text-center mb-6 space-y-2">
+                <h3 className="text-2xl font-bold">Advisory Committee</h3>
+                <p className="text-muted-foreground">Student Life Team</p>
+              </div>
+
+              <div className="flex flex-col md:flex-row items-start gap-8">
+                {/* Placeholder image for Advisory Committee group photo */}
+                {/* removed group-photo placeholder as requested */}
+
+                {/* Members grid */}
+                <div className="flex-1">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {advisoryCommittee.filter(m => !m.name.toLowerCase().includes("reema") && !m.name.toLowerCase().includes("asha")).map((member, index) => (
+                      <motion.div key={`adv-${index}`} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: index * 0.03 }} className="flex flex-col items-center text-center p-4 bg-muted/5 rounded-xl border border-primary/10">
+                        <Avatar className="w-24 h-24">
+                          {/* Advisory members may not have individual images; use fallback initials to maintain consistent size */}
+                          {(member as any).image ? (
+                            <AvatarImage src={(member as any).image} alt={member.name} />
+                          ) : (
+                            <AvatarFallback className="bg-primary/5 text-primary text-2xl font-bold">{getInitials(member.name)}</AvatarFallback>
+                          )}
+                        </Avatar>
+                        <div className="mt-3">
+                          <div className="font-semibold">{member.name}</div>
+                          <div className="text-sm text-muted-foreground uppercase tracking-wide">{member.role}</div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -310,61 +365,7 @@ export default function Team() {
             </div>
           </section>
 
-          {/* Advisory Committee Section */}
-          <section className="space-y-12">
-             <div className="text-center space-y-4">
-               <h2 className="text-3xl font-bold text-secondary">Advisory Committee</h2>
-               <p className="text-muted-foreground text-lg">Student Life Team</p>
-               <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
-            </div>
-            
-            <div className="flex flex-col items-center gap-10 max-w-6xl mx-auto">
-              {/* Director */}
-              {advisoryCommittee.filter(m => m.role.includes("Director")).map((member, index) => (
-                 <motion.div
-                  key={`director-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl px-16 py-10 text-center hover:border-primary/50 transition-all hover:scale-105 cursor-default min-w-[320px] flex flex-col justify-center items-center gap-3 shadow-lg shadow-primary/5"
-                >
-                  <span className="font-bold text-2xl md:text-3xl tracking-wide text-foreground">{member.name}</span>
-                  <span className="text-lg md:text-xl text-primary font-bold uppercase tracking-wider">{member.role}</span>
-                </motion.div>
-              ))}
-
-              {/* Manager */}
-              {advisoryCommittee.filter(m => m.role.includes("Manager")).map((member, index) => (
-                 <motion.div
-                  key={`manager-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl px-12 py-8 text-center hover:border-primary/50 transition-all hover:scale-105 cursor-default min-w-[280px] flex flex-col justify-center items-center gap-2 shadow-md"
-                >
-                  <span className="font-bold text-xl md:text-2xl tracking-wide text-foreground">{member.name}</span>
-                  <span className="text-base md:text-lg text-primary/90 font-semibold uppercase tracking-wider">{member.role}</span>
-                </motion.div>
-              ))}
-
-              {/* Executives */}
-              <div className="flex flex-wrap justify-center gap-6 w-full pt-4">
-                {advisoryCommittee.filter(m => !m.role.includes("Director") && !m.role.includes("Manager")).map((member, index) => (
-                  <motion.div
-                    key={`exec-${index}`}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="bg-muted/10 border border-primary/10 rounded-xl px-8 py-6 text-center hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 cursor-default min-w-[240px] flex flex-col justify-center items-center gap-2"
-                  >
-                    <span className="font-bold text-lg tracking-wide text-foreground">{member.name}</span>
-                    <span className="text-sm text-muted-foreground font-medium uppercase tracking-wider">{member.role}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
+          
 
         </motion.div>
       </main>

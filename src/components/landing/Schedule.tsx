@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -73,14 +74,10 @@ export default function Schedule() {
           <p className="text-muted-foreground">Don't miss out on any of the action.</p>
         </div>
 
-        <Tabs defaultValue="day1" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="day1">Day 1 (Jan 22)</TabsTrigger>
-            <TabsTrigger value="day2">Day 2 (Jan 23)</TabsTrigger>
-          </TabsList>
+        <div className="max-w-4xl mx-auto">
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
             {categories.map((category) => (
               <button
                 key={category}
@@ -97,46 +94,51 @@ export default function Schedule() {
             ))}
           </div>
 
-          {Object.entries(schedule).map(([day, events]) => (
-            <TabsContent key={day} value={day}>
-              <div className="space-y-4 min-h-[400px]">
-                {filterEvents(events).length > 0 ? (
-                  filterEvents(events).map((item, index) => (
-                    <motion.div
-                      key={`${day}-${index}-${item.event}`}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      <Card className="hover:bg-muted/50 transition-colors border-l-4 border-l-primary">
-                        <CardContent className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                          <div className="flex items-center gap-6">
-                            <div className="text-sm font-bold text-primary w-32 shrink-0">{item.time}</div>
-                            <div>
-                              <h3 className="text-xl font-semibold">{item.event}</h3>
-                              <p className="text-sm text-muted-foreground">{item.location}</p>
-                            </div>
-                          </div>
-                          <Badge variant={
-                            item.category === "Technical" ? "default" :
-                            item.category === "Cultural" ? "secondary" :
-                            item.category === "Wellness" ? "outline" : "destructive"
-                          } className="w-fit shrink-0">
-                            {item.category}
-                          </Badge>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))
-                ) : (
-                  <div className="text-center py-12 text-muted-foreground">
-                    No events found for this category on this day.
+          <Accordion type="single" collapsible defaultValue="day1">
+            {Object.entries(schedule).map(([day, events]) => (
+              <AccordionItem key={day} value={day}>
+                <AccordionTrigger>{day === 'day1' ? 'Day 1 (Jan 22)' : 'Day 2 (Jan 23)'}</AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-4">
+                    {filterEvents(events as any).length > 0 ? (
+                      filterEvents(events as any).map((item, index) => (
+                        <motion.div
+                          key={`${day}-${index}-${item.event}`}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
+                        >
+                          <Card className="hover:bg-muted/50 transition-colors border-l-4 border-l-primary">
+                            <CardContent className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                              <div className="flex items-center gap-6">
+                                <div className="text-sm font-bold text-primary w-32 shrink-0">{item.time}</div>
+                                <div>
+                                  <h3 className="text-xl font-semibold">{item.event}</h3>
+                                  <p className="text-sm text-muted-foreground">{item.location}</p>
+                                </div>
+                              </div>
+                              <Badge variant={
+                                item.category === "Technical" ? "default" :
+                                item.category === "Cultural" ? "secondary" :
+                                item.category === "Wellness" ? "outline" : "destructive"
+                              } className="w-fit shrink-0">
+                                {item.category}
+                              </Badge>
+                            </CardContent>
+                          </Card>
+                        </motion.div>
+                      ))
+                    ) : (
+                      <div className="text-center py-12 text-muted-foreground">
+                        No events found for this category on this day.
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );
