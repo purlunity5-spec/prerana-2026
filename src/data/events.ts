@@ -59,7 +59,7 @@ export const events: Event[] = [
     active: true,
     slug: "project-expo",
     day: "Day 1",
-    time: "10:00 AM - 04:00 PM"
+    time: "10:00 AM - 04:00 pP"
   },
   {
     id: "tech04",
